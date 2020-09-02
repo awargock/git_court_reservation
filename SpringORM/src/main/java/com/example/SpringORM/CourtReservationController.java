@@ -37,20 +37,20 @@ public class CourtReservationController {
 	@PostMapping(value="/postreservation")
 	String postReservation(@RequestBody CourtReservation cr) {
 		courtReservationRepo.save(cr);
-		return "Rezerwacja dodana!";
+		return "Rezerwacja dodana! ";
 	}
 	/*
 	
-	List<CourtReservation> cust = new ArrayList<CourtReservation>();
+	List<CourtReservation> rest = new ArrayList<CourtReservation>();
 	  
 	  @RequestMapping(value = "/getallreservations", method = RequestMethod.GET)
 	  public List<CourtReservation> getResource(){
-	      return cust;
+	      return rest;
 	  }
 	  
 	  @RequestMapping(value="/postreservation", method=RequestMethod.POST)
-	  public String postCustomer(@RequestBody CourtReservation customer){
-	    cust.add(customer);
+	  public String postCustomer(@RequestBody CourtReservation cr){
+	    cust.add(cr);
 	    
 	    return "Sucessful!";
 	  }
