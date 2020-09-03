@@ -8,8 +8,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CourtReservationRepo extends JpaRepository<CourtReservation, Long>{
-
+	public CourtReservation findByTermin(String termin);
 }
+
 
 /*
 @Repository

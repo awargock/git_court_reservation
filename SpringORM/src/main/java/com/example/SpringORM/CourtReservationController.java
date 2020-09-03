@@ -39,7 +39,12 @@ public class CourtReservationController {
 		courtReservationRepo.save(cr);
 		return "Rezerwacja dodana! ";
 	}
+	
 	/*
+	 @RequestMapping("/")
+	    public String home() {
+	        return "Hello World!";
+	    }
 	
 	List<CourtReservation> rest = new ArrayList<CourtReservation>();
 	  
@@ -50,7 +55,7 @@ public class CourtReservationController {
 	  
 	  @RequestMapping(value="/postreservation", method=RequestMethod.POST)
 	  public String postCustomer(@RequestBody CourtReservation cr){
-	    cust.add(cr);
+	    rest.add(cr);
 	    
 	    return "Sucessful!";
 	  }
