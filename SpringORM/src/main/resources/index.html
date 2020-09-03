@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+ 
+<html>
+<head>
+    <title>Rezerwacja kortow tenisowych</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="/js/controller.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    
+</head>
+<body>
+ 
+<div class="container" ng-app="app">
+ 
+  <h3 style="color:blue">Rezerwacja kortow tenisowych</h3>
+  
+  <div ng-controller="postcontroller">
+    <form class="form-horizontal" name="customerForm" ng-submit="submitForm()">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="firstnameID">Termin:</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="termin" id="terminID"
+            placeholder="Podaj termin" ng-model="termin"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="nr_kortuID">Numer kortu:</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="nr_kortu" id="nr_kortuID"
+            placeholder="Podaj numer kortu" ng-model="nr_kortu"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default">Zarezerwuj</button>
+        </div>
+      </div>
+    </form>
+ 
+    <div class="col-sm-offset-2 col-sm-10">
+      <p>{{postResultMessage}}</p>
+    </div>
+  </div>
+  
+  <div class="col-sm-offset-2 col-sm-10" ng-controller="getcontroller">
+    <button id="btn-id" type="button" class="btn btn-primary" ng-click="getfunction()">Pokaz wszystkie rezerwacje</button>
+    <ul>
+          <li ng-repeat="res in response">{{res.termin + " " + res.nr_kortu}}</li>
+      </ul>
+  </div>
+  
+</div>
+</body>
+</html>
